@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+Enter Array of numbers separated by comma:<input id="numarray" type="text" name="numarr" placeholder="For e.g. 1,2,3,4,5">
+<!-- <p>Array is:</p>
+<p id="defaultarray"></p> -->
+<button onclick="sort()">Sort</button>
+<p>Sorted array is:</p>
+<p id="result"></p>
+
+<script type="text/javascript">
+	
+	function sort()
+	{	
+		var usrarray = document.getElementById('numarray');
+		//console.log(usrarray.value)
+		var usrarr = usrarray.value.split(",").map(Number)
+		alen = usrarr.length;
+		//console.log(alen)
+		//console.log(usrarr)
+		//document.getElementById('defaultarray').innerHTML = usrarr;
+		// alert(1)
+		var a=[];
+		for(var i=0; i<alen;i++)
+		{
+			for(var j=i+1; j<alen;j++)
+			{
+				if(usrarr[i] > usrarr[j])
+				{
+					a[i] = usrarr[i]
+					usrarr[i] = usrarr[j]
+					usrarr[j] = a[i]
+				}
+			}
+		}
+		//console.log(usrarr)
+		document.getElementById('result').innerHTML = usrarr;	
+	}
+
+
+</script>
+</body>
+</html>
